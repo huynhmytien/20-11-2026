@@ -204,4 +204,94 @@ function layoutCards(stage, cards, factor = 1) {
   const isMobile = rect.width < 650;
   const padX = isMobile ? 54 : 88;
   const padY = isMobile ? 66 : 86;
-  const rx = Math.max(80, (rect.
+  const rx = Math.max(80, (rect.width / 2 - padX) * factor);
+  const ry = Math.max(110, (rect.height / 2 - padY) * factor);
+  const total = cards.length;
+  const startAngle = -Math.PI / 2;
+
+  cards.forEach((card, i) => {
+    const angle = startAngle + (i * 2 * Math.PI) / total;
+    const tx = Math.cos(angle) * rx;
+    const ty = Math.sin(angle) * ry;
+    const rot = ((i % 2 === 0 ? -1 : 1) * (5 + (i % 3) * 2));
+    const sc = factor > 1 ? 0.98 : 0.92;
+
+    card.style.setProperty('--tx', `${tx.toFixed(1)}px`);
+    card.style.setProperty('--ty', `${ty.toFixed(1)}px`);
+    card.style.setProperty('--rot', `${rot}deg`);
+    card.style.setProperty('--sc', sc);
+    card.style.zIndex = 2 + i;
+  });
+}
+
+function openMemories(){
+ const hero=document.getElementById('hero');
+ const main=document.getElementById('memories');
+ const stage=document.getElementById('burstStage');
+ if(main.classList.contains('show')) return;
+ hero.style.display='none';
+ main.classList.add('show');
+
+ photoFiles.forEach((item,i)=>{
+   const card=document.createElement('figure');
+   card.className='burst-photo';
+   const img=document.createElement('img');
+   img.src=item[0];
+   img.alt='Ảnh kỷ niệm '+(i+1);
+   img.onload=()=>{
+     if(img.naturalWidth > img.naturalHeight * 1.08){
+       card.classList.add('landscape');
+     }
+   };
+   const cap=document.createElement('figcaption');
+   cap.className='tiny-caption';
+   cap.textContent=item[1];
+
+   card.appendChild(img);
+   card.appendChild(cap);
+   card.onclick=()=>{
+     document.getElementById('lightboxImg').src=item[0];
+     document.getElementById('lightboxCap').textContent=item[1] || 'Kỷ niệm #'+(i+1);
+     document.getElementById('lightbox').classList.add('open');
+   };
+   stage.appendChild(card);
+ });
+
+ const cards=[...stage.querySelectorAll('.burst-photo')];
+
+ layoutCards(stage, cards, 1.08);
+ requestAnimationFrame(()=>cards.forEach((card,i)=>{
+   setTimeout(()=>card.classList.add('fly'), i*70);
+ }));
+
+ setTimeout(()=>{
+   layoutCards(stage, cards, 0.96);
+   cards.forEach(card=>{
+     card.classList.remove('fly');
+     card.classList.add('settle');
+   });
+   document.getElementById('burstCenter').classList.add('show');
+ }, 1600);
+
+ window.addEventListener('resize', ()=>layoutCards(stage, cards, 0.96));
+
+ petals();
+ setTimeout(()=>main.scrollIntoView({behavior:'smooth',block:'start'}),150);
+}
+
+function petals(){
+ const symbols=['✿','❀','♡','✧'];
+ let n=0;
+ const timer=setInterval(()=>{
+  const p=document.createElement('span');
+  p.className='petal';p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+'vw';p.style.fontSize=(14+Math.random()*15)+'px';
+  p.style.color=['#b69acb','#d5bfdc','#c7a9d6'][Math.floor(Math.random()*3)];
+  p.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),10500);
+  if(++n>=42)clearInterval(timer);
+ },150);
+}
+</script>
+</body>
+</html>
