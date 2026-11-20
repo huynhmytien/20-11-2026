@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eee4f6">
+<title>Gửi cô Anh | 20.11</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap');
+:root{--lav:#a88bc2;--deep:#765b91;--pale:#eee4f6;--cream:#fffaf1;--ink:#61566a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 20% 10%,#fffdf8 0,#f5eff8 38%,#e6d9ef 100%);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:45px 18px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #cbb8d9;border-radius:50%;width:320px;height:320px;opacity:.35;animation:orbit 22s linear infinite}
+.hero:after{width:440px;height:440px;animation-direction:reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hero-inner{position:relative;z-index:2;max-width:650px}
+.kicker{letter-spacing:4px;font-size:10px;color:#9b83ad}
+h1{font:clamp(48px,10vw,82px)/1.05 'Great Vibes',cursive;color:var(--deep);font-weight:400;margin:20px 0 12px}
+.subtitle{font-size:12px;letter-spacing:2px;color:#9b8ba6}
+.flower-mark{font-size:27px;color:#b69bc9;margin:20px 0}
+.open-btn{border:1px solid #bca6cc;background:#fffaf1;color:var(--deep);border-radius:999px;padding:14px 25px;font:500 12px 'DM Sans';letter-spacing:1.5px;cursor:pointer;box-shadow:0 8px 25px #8e76a31c;transition:.3s}
+.open-btn:hover{transform:translateY(-3px);background:#f8f0fb}
+.hint{font-size:10px;letter-spacing:1px;color:#a391af;margin-top:16px}
+main{display:none;max-width:1100px;margin:0 auto;padding:25px 18px 70px}
+main.show{display:block;animation:rise 1s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.section-head{text-align:center;margin:15px 0 25px}
+.section-head .eyebrow{font-size:10px;letter-spacing:3px;color:#a18bad}
+.section-head h2{font:italic 500 clamp(25px,5vw,38px) 'Playfair Display',serif;color:var(--deep);margin:10px 0}
+.burst-stage{height:min(62vh,510px);min-height:360px;position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(145deg,#f8f2fa,#eee3f4 55%,#fffaf1);border:1px solid #dfd0e8;box-shadow:0 18px 55px #806b9020}
+.burst-stage:before{content:"✧";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:95px;color:#c9b1da;opacity:.35}
+.burst-photo{position:absolute;left:50%;top:50%;width:clamp(105px,18vw,175px);padding:7px 7px 27px;background:#fffdf8;box-shadow:0 10px 30px #51405e35;border:1px solid #e8ddeb;opacity:0;transform:translate(-50%,-50%) scale(.08) rotate(0deg);transition:transform 1.25s cubic-bezier(.16,.82,.22,1),opacity .45s ease;will-change:transform}
+.burst-photo img{width:100%;height:clamp(110px,19vw,180px);display:block;object-fit:cover}
+.burst-photo:nth-child(3n) img{height:clamp(135px,22vw,205px)}
+.burst-photo .tiny-caption{position:absolute;bottom:6px;left:3px;right:3px;text-align:center;font:italic 12px 'Playfair Display',serif;color:#8b759e}
+.burst-photo.fly{opacity:1}
+.burst-photo.settle{opacity:1}
+.burst-photo:nth-child(1).fly{transform:translate(-50%,-50%) translate(-36vw,-20vh) rotate(-17deg) scale(1)}
+.burst-photo:nth-child(2).fly{transform:translate(-50%,-50%) translate(31vw,-22vh) rotate(14deg) scale(.94)}
+.burst-photo:nth-child(3).fly{transform:translate(-50%,-50%) translate(-34vw,18vh) rotate(11deg) scale(1.05)}
+.burst-photo:nth-child(4).fly{transform:translate(-50%,-50%) translate(34vw,17vh) rotate(-13deg) scale(.9)}
+.burst-photo:nth-child(5).fly{transform:translate(-50%,-50%) translate(-9vw,-29vh) rotate(8deg) scale(.86)}
+.burst-photo:nth-child(6).fly{transform:translate(-50%,-50%) translate(11vw,28vh) rotate(-8deg) scale(1)}
+.burst-photo:nth-child(7).fly{transform:translate(-50%,-50%) translate(-18vw,2vh) rotate(-5deg) scale(.78)}
+.burst-photo:nth-child(8).fly{transform:translate(-50%,-50%) translate(19vw,-2vh) rotate(7deg) scale(.82)}
+.burst-photo.settle:nth-child(1){transform:translate(-50%,-50%) translate(-31vw,-16vh) rotate(-12deg) scale(.88)}
+.burst-photo.settle:nth-child(2){transform:translate(-50%,-50%) translate(29vw,-16vh) rotate(10deg) scale(.86)}
+.burst-photo.settle:nth-child(3){transform:translate(-50%,-50%) translate(-29vw,16vh) rotate(8deg) scale(.9)}
+.burst-photo.settle:nth-child(4){transform:translate(-50%,-50%) translate(29vw,16vh) rotate(-9deg) scale(.84)}
+.burst-photo.settle:nth-child(5){transform:translate(-50%,-50%) translate(-10vw,-25vh) rotate(5deg) scale(.76)}
+.burst-photo.settle:nth-child(6){transform:translate(-50%,-50%) translate(10vw,25vh) rotate(-5deg) scale(.84)}
+.burst-photo.settle:nth-child(7){transform:translate(-50%,-50%) translate(-17vw,0) rotate(-4deg) scale(.7)}
+.burst-photo.settle:nth-child(8){transform:translate(-50%,-50%) translate(17vw,0) rotate(5deg) scale(.72)}
+.burst-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;text-align:center;color:#8a719e;font:italic 17px 'Playfair Display',serif;opacity:0;transition:opacity 1s .7s;pointer-events:none}
+.burst-center.show{opacity:1}
+.note{max-width:740px;margin:55px auto 0;padding:clamp(25px,6vw,48px);background:#fffaf1e8;border:1px solid #d9c9e3;box-shadow:0 14px 45px #8d77a51a;text-align:center;position:relative}
+.note:before{content:"✧";position:absolute;top:12px;left:50%;transform:translateX(-50%);color:#b69acb;font-size:22px}
+.note h3{font:italic 500 30px 'Playfair Display',serif;color:var(--deep);margin:18px 0}
+.note p{font-size:14px;line-height:2;color:#6f6377;margin:0}
+.sign{font:32px 'Great Vibes',cursive;color:#9678ae;margin-top:22px}
+.footer{text-align:center;color:#a18eae;font-size:10px;letter-spacing:2px;margin:35px 0 0}
+.petal{position:fixed;top:-35px;z-index:8;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(35px,110vh,0) rotate(540deg);opacity:0}}
+@media(max-width:650px){
+ .burst-stage{height:610px;min-height:610px}
+ .burst-photo{width:clamp(105px,34vw,150px)}
+ .burst-photo img{height:clamp(115px,37vw,155px)}
+ .burst-photo:nth-child(3n) img{height:clamp(130px,42vw,175px)}
+ .burst-photo:nth-child(1).fly{transform:translate(-50%,-50%) translate(-27vw,-34vh) rotate(-13deg) scale(.9)}
+ .burst-photo:nth-child(2).fly{transform:translate(-50%,-50%) translate(27vw,-34vh) rotate(12deg) scale(.9)}
+ .burst-photo:nth-child(3).fly{transform:translate(-50%,-50%) translate(-27vw,32vh) rotate(9deg) scale(.9)}
+ .burst-photo:nth-child(4).fly{transform:translate(-50%,-50%) translate(27vw,32vh) rotate(-10deg) scale(.9)}
+ .burst-photo:nth-child(5).fly{transform:translate(-50%,-50%) translate(0,-19vh) rotate(5deg) scale(.78)}
+ .burst-photo:nth-child(6).fly{transform:translate(-50%,-50%) translate(0,19vh) rotate(-5deg) scale(.8)}
+ .burst-photo:nth-child(7).fly{transform:translate(-50%,-50%) translate(-17vw,0) rotate(-5deg) scale(.7)}
+ .burst-photo:nth-child(8).fly{transform:translate(-50%,-50%) translate(17vw,0) rotate(5deg) scale(.7)}
+ .burst-photo.settle:nth-child(1){transform:translate(-50%,-50%) translate(-25vw,-34vh) rotate(-10deg) scale(.83)}
+ .burst-photo.settle:nth-child(2){transform:translate(-50%,-50%) translate(25vw,-34vh) rotate(9deg) scale(.83)}
+ .burst-photo.settle:nth-child(3){transform:translate(-50%,-50%) translate(-25vw,32vh) rotate(8deg) scale(.83)}
+ .burst-photo.settle:nth-child(4){transform:translate(-50%,-50%) translate(25vw,32vh) rotate(-8deg) scale(.83)}
+ .burst-photo.settle:nth-child(5){transform:translate(-50%,-50%) translate(0,-19vh) rotate(4deg) scale(.72)}
+ .burst-photo.settle:nth-child(6){transform:translate(-50%,-50%) translate(0,19vh) rotate(-4deg) scale(.74)}
+ .burst-photo.settle:nth-child(7){transform:translate(-50%,-50%) translate(-16vw,0) rotate(-4deg) scale(.64)}
+ .burst-photo.settle:nth-child(8){transform:translate(-50%,-50%) translate(16vw,0) rotate(4deg) scale(.64)}
+ .note{margin-top:42px}.note p{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<section class="hero" id="hero">
+ <div class="hero-inner">
+  <div class="kicker">VIETNAMESE TEACHERS' DAY · 20.11</div>
+  <h1>For My Dearest Teacher</h1>
+  <div class="subtitle">GỬI CÔ ANH, VỚI TẤT CẢ SỰ BIẾT ƠN</div>
+  <div class="flower-mark">✿　✧　♡</div>
+  <button class="open-btn" onclick="openMemories()">MỞ PHONG THƯ KỶ NIỆM</button>
+  <div class="hint">Có những kỷ niệm luôn được cất giữ thật lâu trong tim</div>
+ </div>
+</section>
+
+<main id="memories">
+ <div class="section-head">
+  <div class="eyebrow">MEMORIES THAT WERE WAITING TO BLOOM</div>
+  <h2>Những kỷ niệm ùa về</h2>
+ </div>
+ <section class="burst-stage" id="burstStage" aria-label="Album ảnh kỷ niệm">
+  <div class="burst-center" id="burstCenter">A little box<br>full of memories ♡</div>
+ </section>
+ <section class="note">
+  <h3>Gửi cô Anh thân thương!</h3>
+  <p>
+   Nhân ngày 20/11, em cảm ơn cô vì không chỉ dạy dỗ mà còn luôn lắng nghe,
+   đồng hành và ở bên em trong những buổi tối em vấp ngã, cần một người để
+   sẻ chia. Dù giờ đây em đã bước sang hành trình mới, em vẫn luôn trân trọng
+   những tình cảm và sự quan tâm cô dành cho em. Chúc cô luôn mạnh khỏe,
+   bình an, hạnh phúc và mãi giữ được ngọn lửa yêu nghề. Thương và biết ơn cô rất nhiều!
+  </p>
+  <div class="sign">With love & gratitude ♡</div>
+ </section>
+ <div class="footer">MADE WITH LOVE · 20 NOVEMBER</div>
+</main>
+
+<script>
+const photoFiles = [
+ ['photo1.jpg','A table full of memories'],
+ ['photo2.jpg','A little moment to keep'],
+ ['photo3.jpg','Our lovely little circle'],
+ ['photo4.jpg','A night to remember'],
+ ['photo5.jpg','Together, as always'],
+ ['photo6.jpg','Simple moments, warm hearts'],
+ ['photo7.jpg','A memory with you'],
+ ['photo8.jpg','Forever grateful']
+];
+function openMemories(){
+ const hero=document.getElementById('hero');
+ const main=document.getElementById('memories');
+ const stage=document.getElementById('burstStage');
+ if(main.classList.contains('show')) return;
+ hero.style.display='none';
+ main.classList.add('show');
+ photoFiles.forEach((item,i)=>{
+   const card=document.createElement('figure');
+   card.className='burst-photo';
+   card.innerHTML='<img src="'+item[0]+'" alt="Ảnh kỷ niệm '+(i+1)+'"><figcaption class="tiny-caption">'+item[1]+'</figcaption>';
+   stage.appendChild(card);
+ });
+ const cards=[...stage.querySelectorAll('.burst-photo')];
+ // Photos burst outward from a tiny stack, then settle into a floating memory collage.
+ requestAnimationFrame(()=>cards.forEach((card,i)=>{
+   setTimeout(()=>card.classList.add('fly'),i*75);
+ }));
+ setTimeout(()=>{
+   cards.forEach(card=>{card.classList.remove('fly');card.classList.add('settle')});
+   document.getElementById('burstCenter').classList.add('show');
+ },2200);
+ petals();
+ setTimeout(()=>main.scrollIntoView({behavior:'smooth',block:'start'}),150);
+}
+function petals(){
+ const symbols=['✿','❀','♡','✧'];
+ let n=0;
+ const timer=setInterval(()=>{
+  const p=document.createElement('span');
+  p.className='petal';p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+'vw';p.style.fontSize=(14+Math.random()*15)+'px';
+  p.style.color=['#b69acb','#d5bfdc','#c7a9d6'][Math.floor(Math.random()*3)];
+  p.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),10500);
+  if(++n>=42)clearInterval(timer);
+ },150);
+}
+</script>
+</body>
+</html>
